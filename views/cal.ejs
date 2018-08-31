@@ -22,6 +22,7 @@
 <div class="row">
 
 <div class="col-md-3" style="background-color:lavender">
+
    </div>
 
   <div class="col-md-9" style="background-color:white;font-size:24px">
@@ -33,17 +34,23 @@
       <table class="table table-bordered">          <tr>
       <%if(au){%>
       <%=au.month%><br>
+      <tr><td>sun</td><td>mon</td><td>tue</td><td>wed</td><td>thu</td><td>fri</td><td>sat</td>
+
+
 
       <% for(var i=0;i<5;i++){%>
       <tr>
       <% for(var j=0;j<7;j++){%>
       <td>
+          <%if(aug[i][j]!==0){%>
           <form action="sch-<%=au.month%>-<%=aug[i][j]%>" method="post">
 
 <button type="submit" class="btn">
       <%=aug[i][j] %>
 </button>
           </form>
+
+      <%}%>
       </td>
       <%}%>
       </tr>

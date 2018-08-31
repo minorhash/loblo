@@ -6,7 +6,12 @@ var inPos=function(req, res, next) {
     if(req.body){
 var tit=req.body.tit
 var type=req.body.type
-db.inPos(tit,type)
+var term=req.body.term
+var link=req.body.link
+var body=req.body.body
+var date=req.body.date
+
+db.inPos(tit,type,term,link,body,date)
     }else{console.log("no req.body")}
 next()}
 
