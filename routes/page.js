@@ -3,7 +3,7 @@ const router = express.Router();
 const db=require("dblo")
 
 let typ=[]
-let par="",tit="",ter="",ln="",bod=""
+let par="",tit=[],ter=[],ln=[],bod=[]
 
 const inPos=function(req, res, next) {
     if(req.body){
@@ -16,21 +16,19 @@ next()}
 
 const typBlo=function(req, res, next) {
 
-par=(req.params.id).replace(/page/,"")
+par=(req.params.id).replace(/page-/,"")
 typ=db.typBlo(par)
-    for(let i=0;i<typ.length;i++){
-    tit=typ[i].title
+for(let i=0;i<typ.length;i++){
+tit.push(typ[i].title)
     }
-
-bod=req.body
 
 next()}
 
 const chk=function(req, res, next) {
 console.log(par)
 console.log(typ.length)
+console.log(typ)
 //console.log(typ)
-console.log(tit)
 console.log(bod)
 next()}
 
@@ -39,8 +37,9 @@ const pcb= function(req, res, next) {
 
 res.render("page", {
 tit: tit,
-   par:par,
-bod:bod
+par:par,
+bod:bod,
+typblo:typ
 });
 }
 

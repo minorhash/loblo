@@ -2,20 +2,25 @@ const express = require('express');
 const router = express.Router();
 const db=require("dblo")
 // glob
-let par,typblo
+let par="",tit=""
+let typblo=[]
 
 const typBlo=function(req, res, next) {
 
-par=req.params.id
+par=(req.params.id).replace(/page-/,"")
 typblo=db.typBlo(par)
+    for(let i=0;i<typblo.length;i++){
+    tit=typblo[i].title
+console.log(tit)
+    }
+
+bod=req.body
 
 next()}
-
 
 const chk=function(req, res, next) {
 
 console.log(par)
-console.log(typblo)
 next()}
 
 // get
