@@ -1,25 +1,25 @@
-var express = require('express');
-var router = express.Router();
-var db=require("dblo")
+const express = require('express');
+const router = express.Router();
+const db=require("dblo")
 // glob
-var par
-var typblo
+let par,typblo
 
-var typBlo=function(req, res, next) {
+const typBlo=function(req, res, next) {
 
 par=req.params.id
 typblo=db.typBlo(par)
+
 next()}
 
 
-var chk=function(req, res, next) {
+const chk=function(req, res, next) {
 
 console.log(par)
 console.log(typblo)
 next()}
 
 // get
-var gcb= function(req, res, next) {
+const gcb= function(req, res, next) {
 
 res.render("index", {
 title: par,

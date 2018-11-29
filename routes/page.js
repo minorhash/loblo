@@ -1,33 +1,51 @@
-var express = require('express');
-var router = express.Router();
-var db=require("dblo")
+const express = require('express');
+const router = express.Router();
+const db=require("dblo")
 
-var inPos=function(req, res, next) {
+let typ=[]
+let par="",tit="",ter="",ln="",bod=""
+
+const inPos=function(req, res, next) {
     if(req.body){
-var tit=req.body.tit
-var type=req.body.type
+const tit=req.body.tit
+const type=req.body.type
 db.inPos(tit,type)
     }else{console.log("no req.body")}
 next()}
 
-var chk=function(req, res, next) {
+
+const typBlo=function(req, res, next) {
+
+par=(req.params.id).replace(/page/,"")
+typ=db.typBlo(par)
+    for(let i=0;i<typ.length;i++){
+    tit=typ[i].title
+    }
+
+bod=req.body
+
+next()}
+
+const chk=function(req, res, next) {
+console.log(par)
+console.log(typ.length)
+//console.log(typ)
+console.log(tit)
+console.log(bod)
 next()}
 
 // get
-var pcb= function(req, res, next) {
-var par=req.params.id
-console.log(par)
-var bod=req.body
-console.log(bod)
+const pcb= function(req, res, next) {
 
 res.render("page", {
-title: par,
+tit: tit,
+   par:par,
 bod:bod
 });
 }
 
 
-router.post('/page-:id', [inPos,chk,pcb])
+router.post('/page-:id', [typBlo,chk,pcb])
 // post
 
 
