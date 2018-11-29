@@ -24,11 +24,15 @@
 
 </div>
   <div class="col-md-9" style="background-color:white">
-      <form action="/page-<%=par%>" method="post">
+<form action="/page-<%=par%>" method="post">
+<ul class="list-group">
+  <li class="list-group-item active">
+type:    <%=par%>
+  </li></ul>
+
+<br>
         <label for="tit">title:</label>
-    <input type="text" class="form-control" name="tit">
-    <label for="type">type:</label>
-<input type="text" class="form-control" name="type" value="<%=par%>">
+        <input type="text" class="form-control" name="tit"><br>
 
 <label for="term">term:</label>
 <input term="text" class="form-control" name="term" >

@@ -1,6 +1,5 @@
 dir=$(pwd)
-str=${dir: -5}
+str=${dir: -3}
 echo $str
-
-git remote add origin https://github.com/user/$str.git
+git remote add origin https://github.com/minorhash/$str.git
 

@@ -29,7 +29,7 @@ typblo:typblo
 });
 }
 
-router.get('/', [typBlo,chk,gcb])
+router.get('/:id', [typBlo,chk,gcb])
 // post
 
 

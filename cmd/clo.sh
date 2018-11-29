@@ -1,5 +1,5 @@
 dir=$(pwd)
-str=${dir: -5}
+str=${dir: -3}
 echo $str
 
 git clone git@github.com:minorhash/$str.git

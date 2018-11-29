@@ -1,0 +1,55 @@
+<% include ../par/head %>
+<body>
+<% include ../par/nav %>
+<div class="container-fluid">
+<div class="row">
+
+<% include ../par/3side%>
+<div class="well col-lg-6 col-sm-12" style="color:black">
+
+<div align="right">
+<a class="<%=(lang=="ja"?"active":"")%>" href="sig?clang=ja">
+<span class="flag-icon flag-icon-jp my-big"></span>
+</a>
+
+<a class="<%=(lang=="en"?"active":"")%>" href="sig?clang=en">
+<span class="flag-icon flag-icon-gb my-big"></span>
+</a>
+</div>
+
+
+<br><br>
+<div style="text-align:center">
+<%= gis.reg1 %>
+<br><br><br></div>
+<form action="/shop/usr/sup" method="post">
+Name<br>
+<input type="text" class="form-control" name="name" size="j0"><br>
+
+Password:<br>
+<input type="text" class="form-control" name="pss" size="80" ><br>
+
+E-mail:<br>
+<input type="text" class="form-control" name="email" size="80" ><br>
+
+<div style="text-align:center">
+    <a href="/shop/note/agmt" target="_blank"><%= gis.agmt %></a><%= gis.reg2 %>
+    <input type="checkbox" name="chk" value="yes"> <%= gis.agr %><br>
+<br>
+<button type="submit" class="btn btn-default"><%= gis.reg3 %></button>
+</form>
+<br>
+</div>
+
+</div>
+<% include ../par/3side%>
+
+</div>
+</div>
+
+
+<br><br><br>
+
+<div class="footer"><% include ../par/foot %></div>
+
+

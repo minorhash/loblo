@@ -1,0 +1,47 @@
+<% include ../par/head %>
+<body>
+<% include ../par/nav %>
+<div class="container-fluid">
+<div class="row">
+
+<div class="col-md-2 col-sm-12" style="color:black"></div>
+
+<div class="well col-md-8  col-sm-12" style="color:black">
+
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+
+<div style="text-align:center">
+    <%= ins %>
+<%if(ins==true){ %>
+<%= gis.reg0 %>
+<br>
+<%= gis.cnf %>
+<%}else{%>
+<%= gis.err %>
+<br>
+<a href="/shop/usr/sig">
+<%= gis.bck %>
+</a>
+<%}%>
+
+</div>
+
+</div>
+
+
+<div class="col-sm-1"></div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<br><br><br>
+
+<div class="footer"><% include ../par/foot %></div>
+
+

@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
 var app = express();
 
 // view engine setup
@@ -18,12 +17,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 var indexRouter = require('./routes/index');
+var typ= require('./routes/typ');
 var add= require('./routes/add');
 var cal= require('./routes/cal');
 var sch= require('./routes/sch');
 var page= require('./routes/page');
 
 app.use('/', indexRouter);
+app.use('/', typ);
 app.use('/', add);
 app.use('/', cal);
 app.use('/', sch);
@@ -42,7 +43,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('err');
 });
 
 module.exports = app;
